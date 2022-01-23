@@ -21,6 +21,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - uses: iterative/setup-dvc@v1
+    
+    - name: Pull DVC data
+      run: |
+        dvc pull
+    
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
