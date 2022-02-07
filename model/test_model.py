@@ -1,9 +1,7 @@
 import pytest
-import sys
 import numpy as np
 import logging
-sys.path.append('model/')
-import model
+from model import train_model, inference, compute_model_metrics
 
 logging.basicConfig(
     level = logging.INFO,
@@ -23,12 +21,12 @@ def y_train():
 
 @pytest.fixture
 def model(X_train, y_train):
-    return model.train_model(X_train, y_train)
+    return train_model(X_train, y_train)
 
 
 def test_train_model(X_train, y_train):
     try:
-        clf = model.train_model(X_train, y_train)
+        clf = train_model(X_train, y_train)
     except:
         logger.error('Model failed to train')
     logger.info('Model successfully trained')

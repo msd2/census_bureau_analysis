@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 /census.csv
 /cleaned_census_data.csv
+data/
