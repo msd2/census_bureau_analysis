@@ -23,15 +23,15 @@ jobs:
     
     - uses: iterative/setup-dvc@v1
     
-    - name: Pull DVC data
-      run: |
-        dvc pull -r s3remote
-    
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    
+    - name: Pull DVC data
+      run: |
+        dvc pull -r s3remote
         
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
