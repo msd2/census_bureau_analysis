@@ -13,7 +13,7 @@ logger = logging.getLogger()
 
 @pytest.fixture
 def X_train():
-    return np.random.rand(1,10)
+    return np.random.rand(1,10)[0]
 
 @pytest.fixture
 def y_train():
