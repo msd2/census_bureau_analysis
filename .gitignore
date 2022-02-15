@@ -130,3 +130,5 @@ dmypy.json
 /census.csv
 /cleaned_census_data.csv
 data/
+
+*.sav
