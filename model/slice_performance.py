@@ -8,6 +8,9 @@ from data import process_data
 
 def slice_performance(data, categorical_features, encoder, lb, model, output):
 
+    with open(output, 'w') as f:
+        f.write('feature,class,fbeta,precision,recall')
+
     for feature in categorical_features:
         for cls in data[feature].unique():
 
@@ -48,8 +51,5 @@ if __name__ == '__main__':
     with open('trained_model.sav', 'rb') as f:
         model = pickle.load(f)
     
-    with open(output, 'w') as f:
-        f.write('feature,class,fbeta,precision,recall')
-
     slice_performance(data, cat_features, encoder, lb, model, output)
     
