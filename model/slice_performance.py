@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 from sklearn import preprocessing
 from model import inference, compute_model_metrics
-from data import process_data
+from process_data import process_data
 
 
 def slice_performance(data, categorical_features, encoder, lb, model, output):

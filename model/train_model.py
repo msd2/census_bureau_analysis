@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 import os
 from model import train_model
-from data import process_data
+from process_data import process_data
 from model import compute_model_metrics, inference
 
 
@@ -13,10 +13,12 @@ if __name__ == '__main__':
     project_root = os.path.dirname(os.path.dirname(__file__))
     data_path = os.path.join(project_root, 'data/cleaned_census_data.csv')
     data = pd.read_csv(data_path)
+    data = data.drop('Unnamed: 0', axis=1)
     train, test = train_test_split(data, test_size=0.20)
     
     model_filename = 'trained_model.sav'
     encoder_filename = 'encoder.sav'
+    lb_filename = 'lb.sav'
     slice_performance_output = 'slice_output.txt'
 
     cat_features = ["workclass","education","marital-status","occupation",
@@ -45,3 +47,4 @@ if __name__ == '__main__':
 
     pickle.dump(model, open(model_filename, 'wb'))
     pickle.dump(encoder, open(encoder_filename, 'wb'))
+    pickle.dump(lb, open(lb_filename, 'wb'))
