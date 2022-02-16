@@ -2,9 +2,9 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import pickle
 import os
-from model import train_model
-from process_data import process_data
-from model import compute_model_metrics, inference
+from model.model import train_model
+from model.process_data import process_data
+from model.model import compute_model_metrics, inference
 
 
 
