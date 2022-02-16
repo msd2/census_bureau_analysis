@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import logging
 import random
-from model import train_model, inference, compute_model_metrics
+from model.model import train_model, inference, compute_model_metrics
 
 logging.basicConfig(
     level = logging.INFO,
