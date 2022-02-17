@@ -127,9 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/census.csv
-/cleaned_census_data.csv
-data/
 
+*.csv
 *.sav
 *.ipynb
