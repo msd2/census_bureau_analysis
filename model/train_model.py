@@ -2,10 +2,8 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import pickle
 import os
-from model.model import train_model
-from model.process_data import process_data
-from model.model import compute_model_metrics, inference
-
+from process_data import process_data
+from model.model import compute_model_metrics, inference, train_model
 
 
 if __name__ == '__main__':
