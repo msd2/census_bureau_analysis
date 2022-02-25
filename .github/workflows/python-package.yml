@@ -54,4 +54,4 @@ jobs:
         
     - name: Test with pytest
       run: |
-        pytest model/test_model.py
+        pytest test_main.py
